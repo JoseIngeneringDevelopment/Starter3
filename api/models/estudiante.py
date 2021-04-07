@@ -17,5 +17,5 @@ class Estudiante(models.Model):
 
 
     def delete(self, *args):
-        self.active = False
+        self.activo = False
         self.save()
