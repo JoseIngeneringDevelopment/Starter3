@@ -1,15 +1,13 @@
 from django.db import models
-from .profile import Profile
+from .profesion import Profesion
 
 
-class Estudiante(models.Model):
+class Catedratico(models.Model):
 
-   
 
     profile = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name="profile")
-    carnet = models.CharField(max_length=25, null=True, blank=True)
-    contacto = models.CharField(max_length=45, null=True, blank=True)
-    direccion_contacto = models.CharField(max_length = 45, null=True, blank=True)
+    profesion = models.OneToOneField(Profesion, on_delete=models.CASCADE, related_name="profesion")
+    
 
     activo = models.BooleanField(default=True)
     creado = models.DateTimeField(auto_now_add=True)
