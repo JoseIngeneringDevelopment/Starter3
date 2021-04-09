@@ -5,7 +5,7 @@ from .asignacion import Asignacion
 class Material(models.Model):
 
 
-    asignacion = models.OneToOneField(Asignacion, on_delete=models.CASCADE, related_name="asignacion")
+    asignacion = models.OneToOneField(Asignacion, on_delete=models.CASCADE, related_name="asignacion_material")
     titulo = models.CharField(max_length=45, null=True, blank=True)
     descripcion = models.TextField(max_length=255, null=True, blank=True)
     archivo = models.CharField(max_length=45, null=True, blank=True)

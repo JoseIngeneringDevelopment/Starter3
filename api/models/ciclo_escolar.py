@@ -7,7 +7,7 @@ class Ciclo(models.Model):
    
 
    
-    anio = models.Int(max_length=45, null=True, blank=True)
+    anio = models.IntegerField(null=True, blank=True)
    
     
 

@@ -5,8 +5,8 @@ from .estudiante import Estudiante
 
 class Asignacion_Estudiante(models.Model):
    
-    asignacion = models.OneToOneField(Asignacion, on_delete=models.CASCADE, related_name="asignacion")
-    estudiante = models.OneToOneField(Estudiante, on_delete=models.CASCADE, related_name="estudiante")
+    asignacion = models.OneToOneField(Asignacion, on_delete=models.CASCADE, related_name="asignacion_estudiante")
+    estudiante = models.OneToOneField(Estudiante, on_delete=models.CASCADE, related_name="estudiante_asignacion")
 
     activo = models.BooleanField(default=True)
     creado = models.DateTimeField(auto_now_add=True)

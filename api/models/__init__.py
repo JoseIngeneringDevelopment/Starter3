@@ -1,6 +1,6 @@
 from .profile import Profile
 from .asignacion import Asignacion
-from .asignacion-estudiante import Asignacion_Estudiante
+from .asignacion_estudiante import Asignacion_Estudiante
 from .catedratico import Catedratico
 from .ciclo_escolar import Ciclo
 from .curso import Curso

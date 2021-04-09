@@ -1,12 +1,12 @@
 from django.db import models
-from .profile import Profile
+from api.models.profile import Profile
 
 
 class Estudiante(models.Model):
 
    
 
-    profile = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name="profile")
+    profile = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name="profile_estudiante")
     carnet = models.CharField(max_length=25, null=True, blank=True)
     contacto = models.CharField(max_length=45, null=True, blank=True)
     direccion_contacto = models.CharField(max_length = 45, null=True, blank=True)
