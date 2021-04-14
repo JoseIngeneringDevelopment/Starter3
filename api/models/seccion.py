@@ -7,7 +7,7 @@ class Seccion(models.Model):
    
 
    
-    nombre = models.CharField(max_length=45, null=True, blank=True)
+    seccion_name = models.CharField(max_length=45, null=True, blank=True)
     
     activo = models.BooleanField(default=True)
     creado = models.DateTimeField(auto_now_add=True)

@@ -5,8 +5,7 @@ class Profesion(models.Model):
 
    
 
-    nombre = models.CharField(max_length=45, null=True, blank=True)
-    descripcion = models.TextField(max_length=255, null=True, blank=True)
+    profesion_name = models.CharField(max_length=45, null=True, blank=True)
 
     activo = models.BooleanField(default=True)
     creado = models.DateTimeField(auto_now_add=True)

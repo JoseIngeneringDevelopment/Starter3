@@ -16,6 +16,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Grids from './common/components/Examples/Grids';
 import Notificaciones from './common/components/Examples/Notificaciones';
 import ExampleTabs from './common/components/Examples/Tabs/Tabs';
+import ProfesionList from './common/components/Profesion/ProfesionListContainer';
+import ProfesionCreate from './common/components/Profesion/ProfesionCreateContainer'
 require('../style/index.css');
 
 module.exports = (
@@ -38,7 +40,12 @@ module.exports = (
                     component={Notificaciones}
                 />
                 <ProtectedRoute exact path="/tabs" component={ExampleTabs} />
+                <ProtectedRoute exact path="/profesions" component={ProfesionList} />
+                <ProtectedRoute exact path="/profesions/create" component={ProfesionCreate} />
+                <ProtectedRoute exact path="/profesions/:id/editar" component={ProfesionCreate} />
+                <ProtectedRoute exact path="/profesions/:id" component={ProfesionCreate} />
                 <Route component={NotFound} />
+                
             </Switch>
         </div>
         <NotificationContainer />

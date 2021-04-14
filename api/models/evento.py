@@ -6,7 +6,7 @@ class Evento(models.Model):
 
    
 
-    cilco = models.OneToOneField(Ciclo, on_delete=models.CASCADE, related_name="ciclo_escolar")
+    ciclo = models.ForeignKey(Ciclo, on_delete=models.CASCADE, related_name="ciclo_escolar")
     titulo = models.CharField(max_length=45, null=True, blank=True)
     descripcion = models.TextField(max_length=255, null=True, blank=True)
     fecha = models.BooleanField(default=True)

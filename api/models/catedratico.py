@@ -6,8 +6,8 @@ from .profile import Profile
 class Catedratico(models.Model):
 
 
-    profile = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name="profile_catedratico")
-    profesion = models.OneToOneField(Profesion, on_delete=models.CASCADE, related_name="profesion_catedratico")
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name="profile_catedratico")
+    profesion = models.ForeignKey(Profesion, on_delete=models.CASCADE, related_name="profesion_catedratico")
     
 
     activo = models.BooleanField(default=True)

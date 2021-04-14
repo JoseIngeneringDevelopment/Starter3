@@ -9,11 +9,11 @@ from django.db import models
 class Asignacion(models.Model):
 
     
-    ciclo = models.OneToOneField(Ciclo, on_delete=models.CASCADE, related_name="ciclo_asignacion")
-    grado = models.OneToOneField(Grado, on_delete=models.CASCADE, related_name="grado_asignacion")
-    seccion = models.OneToOneField(Seccion, on_delete=models.CASCADE, related_name="seccion_asignacion")
-    curso = models.OneToOneField(Curso, on_delete=models.CASCADE, related_name="curso_asignacion")
-    catedratico = models.OneToOneField(Catedratico, on_delete=models.CASCADE, related_name="catedratico_asignacion")
+    ciclo = models.ForeignKey(Ciclo, on_delete=models.CASCADE, related_name="ciclo_asignacion")
+    grado = models.ForeignKey(Grado, on_delete=models.CASCADE, related_name="grado_asignacion")
+    seccion = models.ForeignKey(Seccion, on_delete=models.CASCADE, related_name="seccion_asignacion")
+    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name="curso_asignacion")
+    catedratico = models.ForeignKey(Catedratico, on_delete=models.CASCADE, related_name="catedratico_asignacion")
     imagen_portada = models.ImageField(upload_to='Portada', null=True, blank=True)
     descripcion = models.TextField(max_length=255, null=True, blank=True)
 

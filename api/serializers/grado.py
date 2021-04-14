@@ -9,4 +9,7 @@ class GradoSerializer(serializers.ModelSerializer):
 class GradoRegistroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Grado
-        fields = ('nombre', 'descripcion')
+        fields = (
+            'nombre', 
+            'descripcion',
+        )

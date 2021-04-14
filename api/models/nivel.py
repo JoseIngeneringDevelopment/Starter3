@@ -5,8 +5,8 @@ from django.db import models
 class Nivel(models.Model):
 
    
-    nombre = models.CharField(max_length=45, null=True, blank=True)
-    descripcion = models.TextField(max_length=255, null=True, blank=True)
+    nivel_name = models.CharField(max_length=45, null=True, blank=True)
+    nivel_descipcion = models.TextField(max_length=255, null=True, blank=True)
     
 
     activo = models.BooleanField(default=True)
