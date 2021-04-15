@@ -17,7 +17,11 @@ import Grids from './common/components/Examples/Grids';
 import Notificaciones from './common/components/Examples/Notificaciones';
 import ExampleTabs from './common/components/Examples/Tabs/Tabs';
 import ProfesionList from './common/components/Profesion/ProfesionListContainer';
-import ProfesionCreate from './common/components/Profesion/ProfesionCreateContainer'
+import ProfesionCreate from './common/components/Profesion/ProfesionCreateContainer';
+import GradoList from './common/components/grado/GradoListContainer';
+import GradoCreate from './common/components/grado/GradoCreateContainer';
+import SeccionList from './common/components/Seccion/SeccionListContainer'
+import SeccionCreate from './common/components/Seccion/SeccionCreateContainer'
 require('../style/index.css');
 
 module.exports = (
@@ -44,6 +48,14 @@ module.exports = (
                 <ProtectedRoute exact path="/profesions/create" component={ProfesionCreate} />
                 <ProtectedRoute exact path="/profesions/:id/editar" component={ProfesionCreate} />
                 <ProtectedRoute exact path="/profesions/:id" component={ProfesionCreate} />
+                <ProtectedRoute exact path="/grados" component={GradoList} />
+                <ProtectedRoute exact path="/grados/create" component={GradoCreate} />
+                <ProtectedRoute exact path="/grados/:id/editar" component={GradoCreate} />
+                <ProtectedRoute exact path="/grados/:id" component={GradoCreate} />
+                <ProtectedRoute exact path="/secciones" component={SeccionList} />
+                <ProtectedRoute exact path="/secciones/create" component={SeccionCreate} />
+                <ProtectedRoute exact path="/secciones/:id/editar" component={SeccionCreate} />
+                <ProtectedRoute exact path="/secciones/:id" component={SeccionCreate} />
                 <Route component={NotFound} />
                 
             </Switch>

@@ -7,6 +7,9 @@ import profile from './modules/cuenta/profile';
 import usuarios from './modules/usuarios/usuarios';
 import notificaciones from './modules/notificaciones/notificaciones';
 import profesion from "./modules/profesion/profesion";
+import grado from "./modules/grado/grado";
+import seccion from "./modules/seccion/seccion"
+
 export default combineReducers({
     form: formReducer,
     login,
@@ -14,6 +17,8 @@ export default combineReducers({
     profile,
     usuarios,
     profesion,
+    grado,
+    seccion,
     routing,
     notificaciones,
 });

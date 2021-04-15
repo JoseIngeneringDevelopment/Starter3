@@ -8,6 +8,8 @@ from api import viewsets
 router = DefaultRouter()
 router.register(r'user', viewsets.UserViewset)
 router.register(r'profesion',viewsets.ProfesionViewset)
+router.register(r'grado',viewsets.GradoViewset)
+router.register(r'seccion',viewsets.SeccionViewset)
 
 
 urlpatterns = [

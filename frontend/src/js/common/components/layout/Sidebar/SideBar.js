@@ -120,6 +120,62 @@ class SideBar extends Component {
                             </NavLink>
                         </li>
                         <li className="nav-item">
+                            <NavLink
+                                to="/grados"
+                                className="nav-link"
+                                activeClassName={'active'}
+                            >
+                                <div className="d-inline-block item-icon-wrapper">
+                                    <i className="material-icons">
+                                        vertical_split
+                                    </i>
+                                </div>
+                                <span>Grados</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                to="/secciones"
+                                className="nav-link"
+                                activeClassName={'active'}
+                            >
+                                <div className="d-inline-block item-icon-wrapper">
+                                    <i className="material-icons">
+                                        vertical_split
+                                    </i>
+                                </div>
+                                <span>Secciones</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                to="/cursos"
+                                className="nav-link"
+                                activeClassName={'active'}
+                            >
+                                <div className="d-inline-block item-icon-wrapper">
+                                    <i className="material-icons">
+                                        vertical_split
+                                    </i>
+                                </div>
+                                <span>Cursos</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                to="/niveles"
+                                className="nav-link"
+                                activeClassName={'active'}
+                            >
+                                <div className="d-inline-block item-icon-wrapper">
+                                    <i className="material-icons">
+                                        vertical_split
+                                    </i>
+                                </div>
+                                <span>Niveles</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
                             <Link
                                 to="/login"
                                 onClick={logOut}

@@ -1,12 +1,12 @@
 from rest_framework import serializers
 from api.models.curso import Curso
 
-class ProfesionSerializer(serializers.ModelSerializer):
+class CursoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curso
         fields = '__all__'
 
-class ProfesionRegisterSerializer(serializers.ModelSerializer):
+class CursoRegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curso
         fields = (

@@ -10,23 +10,23 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
 
-from api.models import Grado
-from api.serializers import GradoRegistroSerializer, GradoSerializer
+from api.models import Nivel
+from api.serializers import NivelSerializer, NivelRegisterSerializer
 
-class GradoViewset(viewsets.ModelViewSet):
-    queryset = Grado.objects.filter(activo=True)
+class NivelViewset(viewsets.ModelViewSet):
+    queryset = Nivel.objects.filter(activo=True)
 
     filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
-    filter_fields = ("nombre","descripcion",)
-    search_fields = ("nombre",)
-    ordering_fields = ("nombre","descripcion",)
+    filter_fields = ("nivel_name","nivel_descripcion",)
+    search_fields = ("nivel_name",)
+    ordering_fields = ("nivel_name","nivel_descripcion",)
 
     def get_serializer_class(self):
         """Define serializer for API"""
         if self.action == 'list' or self.action == 'retrieve':
-            return GradoSerializer
+            return NivelSerializer
         else:
-            return GradoRegistroSerializer
+            return NivelRegisterSerializer
 
     def get_permissions(self):
         """" Define permisos para este recurso """
