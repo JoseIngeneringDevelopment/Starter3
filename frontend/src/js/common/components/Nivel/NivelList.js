@@ -3,7 +3,7 @@ import Grid from "../Utils/Grid";
 import {standardActions} from "../Utils/Grid/StandardActions";
 
 
-class GradoList extends Component{
+class NivelList extends Component{
     componentWillMount = () => {
         const {listar} = this.props;
         listar();
@@ -14,13 +14,13 @@ class GradoList extends Component{
         return(
             <div>
                 
-                <h3> Grados </h3>
+                <h3> Niveles </h3>
                 <div className="d-flex flex-row justify-content-end mb-3">
                     <a
                         className="btn btn-primary btn-sm"
-                        href='/#/grados/create'
+                        href='/#/niveles/create'
                     >
-                        Agregar grado
+                        Agregar nivel
                     </a>
                 </div>
                 {data &&
@@ -33,13 +33,13 @@ class GradoList extends Component{
                         //onSortChange={onSortChange}
                     >
                         <TableHeaderColumn
-                            dataField="nombre"
+                            dataField="nivel_name"
                             dataSort
                         >
-                            Nombre del Grado
+                            Nombre del Nivel
                         </TableHeaderColumn>
                         <TableHeaderColumn
-                            dataField="descripcion"
+                            dataField="nivel_descipcion"
                             dataSort
                         >
                             Descripcion
@@ -51,8 +51,8 @@ class GradoList extends Component{
                             dataSort
                             dataFormat={
                                 standardActions({
-                                    editar: 'grados',
-                                    ver: 'grados/ver',
+                                    editar: 'niveles',
+                                    ver: 'niveles/ver',
                                     eliminar: eliminar
                             })}
                         >
@@ -65,4 +65,4 @@ class GradoList extends Component{
     }
 }
 
-export default GradoList;
+export default NivelList;

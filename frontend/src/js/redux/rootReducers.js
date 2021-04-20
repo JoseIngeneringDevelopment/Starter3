@@ -9,6 +9,9 @@ import notificaciones from './modules/notificaciones/notificaciones';
 import profesion from "./modules/profesion/profesion";
 import grado from "./modules/grado/grado";
 import seccion from "./modules/seccion/seccion"
+import curso from "./modules/curso/curso"
+import nivel from "./modules/nivel/nivel"
+import catedratico from "./modules/catedratico/catedratico"
 
 export default combineReducers({
     form: formReducer,
@@ -19,6 +22,9 @@ export default combineReducers({
     profesion,
     grado,
     seccion,
+    curso,
+    nivel,
+    catedratico,
     routing,
     notificaciones,
 });

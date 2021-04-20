@@ -9,7 +9,7 @@ class ProfesionList extends Component{
         listar();
     }
     render(){
-        const { data, loader}= this.props;
+        const { data, loader, eliminar}= this.props;
         console.log("data",data)
         return(
             <div>
@@ -46,8 +46,9 @@ class ProfesionList extends Component{
                             dataFormat={
                                 standardActions({
                                     editar: 'profesions',
-                                    ver: 'profesions',
-                                    eliminar: () => {},
+                                    ver: 'profesions/ver',
+                                    //eliminar: () => {},
+                                    eliminar: eliminar
                             })}
                         >
                             Acciones

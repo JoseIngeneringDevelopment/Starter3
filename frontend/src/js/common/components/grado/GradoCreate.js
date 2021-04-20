@@ -15,11 +15,18 @@ class GradoCreate extends Component{
             leer(id);
         }
     }
+
+    actualizar = (data) => {
+        const {editar} = this.props;
+        const id = data.id;
+        editar(id,data);
+    }
+
     render(){
         console.log("props:",this.props)
-        const {crear, editar} = this.props;
+        const {crear} = this.props;
         const {creacion} = this.state;
-        const fun = creacion ? crear : editar;
+        const fun = creacion ? crear : this.actualizar;
 
         return(
             <React.Fragment>

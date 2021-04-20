@@ -17,9 +17,9 @@ class NivelViewset(viewsets.ModelViewSet):
     queryset = Nivel.objects.filter(activo=True)
 
     filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
-    filter_fields = ("nivel_name","nivel_descripcion",)
+    filter_fields = ("nivel_name","nivel_descipcion",)
     search_fields = ("nivel_name",)
-    ordering_fields = ("nivel_name","nivel_descripcion",)
+    ordering_fields = ("nivel_name","nivel_descipcion",)
 
     def get_serializer_class(self):
         """Define serializer for API"""

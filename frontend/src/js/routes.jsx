@@ -20,8 +20,14 @@ import ProfesionList from './common/components/Profesion/ProfesionListContainer'
 import ProfesionCreate from './common/components/Profesion/ProfesionCreateContainer';
 import GradoList from './common/components/grado/GradoListContainer';
 import GradoCreate from './common/components/grado/GradoCreateContainer';
-import SeccionList from './common/components/Seccion/SeccionListContainer'
-import SeccionCreate from './common/components/Seccion/SeccionCreateContainer'
+import SeccionList from './common/components/Seccion/SeccionListContainer';
+import SeccionCreate from './common/components/Seccion/SeccionCreateContainer';
+import CursoList from './common/components/Curso/CursoListContainer';
+import CursoCreate from './common/components/Curso/CursoCreateContainer';
+import NivelList from './common/components/Nivel/NivelListContainer';
+import NivelCreate from './common/components/Nivel/NivelCreateContainer';
+import CatedraticoList from './common/components/Catedratico/CatedraticoListContainer';
+import CatedraticoCreate from './common/components/Catedratico/CatedraticoCreateContainer';
 require('../style/index.css');
 
 module.exports = (
@@ -47,15 +53,27 @@ module.exports = (
                 <ProtectedRoute exact path="/profesions" component={ProfesionList} />
                 <ProtectedRoute exact path="/profesions/create" component={ProfesionCreate} />
                 <ProtectedRoute exact path="/profesions/:id/editar" component={ProfesionCreate} />
-                <ProtectedRoute exact path="/profesions/:id" component={ProfesionCreate} />
+                <ProtectedRoute exact path="/profesions/ver/:id" component={ProfesionCreate} />
                 <ProtectedRoute exact path="/grados" component={GradoList} />
                 <ProtectedRoute exact path="/grados/create" component={GradoCreate} />
                 <ProtectedRoute exact path="/grados/:id/editar" component={GradoCreate} />
-                <ProtectedRoute exact path="/grados/:id" component={GradoCreate} />
+                <ProtectedRoute exact path="/grados/ver/:id" component={GradoCreate} />
                 <ProtectedRoute exact path="/secciones" component={SeccionList} />
                 <ProtectedRoute exact path="/secciones/create" component={SeccionCreate} />
                 <ProtectedRoute exact path="/secciones/:id/editar" component={SeccionCreate} />
-                <ProtectedRoute exact path="/secciones/:id" component={SeccionCreate} />
+                <ProtectedRoute exact path="/secciones/ver/:id" component={SeccionCreate} />
+                <ProtectedRoute exact path="/cursos" component={CursoList} />
+                <ProtectedRoute exact path="/cursos/create" component={CursoCreate} />
+                <ProtectedRoute exact path="/cursos/:id/editar" component={CursoCreate} />
+                <ProtectedRoute exact path="/cursos/ver/:id" component={CursoCreate} />
+                <ProtectedRoute exact path="/niveles" component={NivelList} />
+                <ProtectedRoute exact path="/niveles/create" component={NivelCreate} />
+                <ProtectedRoute exact path="/niveles/:id/editar" component={NivelCreate} />
+                <ProtectedRoute exact path="/niveles/ver/:id" component={NivelCreate} />
+                <ProtectedRoute exact path="/catedraticos" component={CatedraticoList} />
+                <ProtectedRoute exact path="/catedraticos/create" component={CatedraticoCreate} />
+                <ProtectedRoute exact path="/catedraticos/:id/editar" component={CatedraticoCreate} />
+                <ProtectedRoute exact path="/catedraticos/ver/:id" component={CatedraticoCreate} />
                 <Route component={NotFound} />
                 
             </Switch>

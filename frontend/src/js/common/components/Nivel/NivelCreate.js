@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Formulario from './Formulario';
 
-class ProfesionCreate extends Component{
+class NivelCreate extends Component{
     state={
         creacion: true,
     }
@@ -40,4 +40,4 @@ class ProfesionCreate extends Component{
     }
 }
 
-export default ProfesionCreate;
+export default NivelCreate;

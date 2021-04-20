@@ -12,5 +12,5 @@ class NivelRegisterSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'nivel_name',
-            'nivel_descripcion',
+            'nivel_descipcion',
         )

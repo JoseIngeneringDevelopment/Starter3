@@ -6,7 +6,7 @@ class Formulario extends Component{
     
     render(){
         const {handleSubmit, crear} = this.props
-
+        const ver = window.location.href.includes("ver")
         return(
             <form onSubmit={handleSubmit}>
                 <div>
@@ -23,9 +23,11 @@ class Formulario extends Component{
                         >
                             Cancelar
                         </a>
+                        {!ver &&
                         <button className="btn btn-primary btn-sm mr-2">
                             {crear ? "Registrar" : "Actualizar"}
                         </button>
+                        }
                     </div>
                 </div>
             </form>

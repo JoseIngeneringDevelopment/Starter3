@@ -10,16 +10,16 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
 
-from api.models import Curso
+from api.models import Curso 
 from api.serializers import CursoRegisterSerializer, CursoSerializer
 
 class CursoViewset(viewsets.ModelViewSet):
     queryset = Curso.objects.filter(activo=True)
 
     filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
-    filter_fields = ("curso_name","curso_descripcion",)
-    search_fields = ("curso_name",)
-    ordering_fields = ("curso_name","curso_descripcion",)
+    filter_fields = ("curso_name","curso_descripcion")
+    search_fields = ("curso_name")
+    ordering_fields = ("curso_name","curso_descripcion")
 
     def get_serializer_class(self):
         """Define serializer for API"""

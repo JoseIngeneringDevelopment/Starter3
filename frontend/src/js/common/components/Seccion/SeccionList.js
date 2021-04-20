@@ -9,7 +9,7 @@ class SeccionList extends Component{
         listar();
     }
     render(){
-        const { data, loader}= this.props;
+        const { data, loader, eliminar}= this.props;
         console.log("data",data)
         return(
             <div>
@@ -46,8 +46,8 @@ class SeccionList extends Component{
                             dataFormat={
                                 standardActions({
                                     editar: 'secciones',
-                                    ver: 'secciones',
-                                    eliminar: () => {},
+                                    ver: 'secciones/ver',
+                                    eliminar: eliminar
                             })}
                         >
                             Acciones

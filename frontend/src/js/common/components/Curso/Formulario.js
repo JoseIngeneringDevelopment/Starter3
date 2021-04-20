@@ -10,22 +10,22 @@ class Formulario extends Component{
         return(
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Nombre del Grado</label>
+                    <label>Nombre del Curso</label>
                     <Field
-                        name="nombre"
+                        name="curso_name"
                         component={renderField}
                         type="text"
                     />
                     <label>Descripcion</label>
                     <Field
-                        name="descripcion"
+                        name="curso_descripcion"
                         component={renderField}
                         type="text"
                     />
                     <div className="d-flex flex-row justify-content-end mt-3">
                         <a 
                             className="btn btn-secondary btn-sm mr-2" 
-                            href='/#/grados'
+                            href='/#/cursos'
                         >
                             Cancelar
                         </a>
@@ -43,7 +43,7 @@ class Formulario extends Component{
 
 export default reduxForm(
     {
-        form: 'GradoForm'
+        form: 'CursoForm'
     }
 )(Formulario)
 

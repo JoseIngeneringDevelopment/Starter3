@@ -3,7 +3,7 @@ import Grid from "../Utils/Grid";
 import {standardActions} from "../Utils/Grid/StandardActions";
 
 
-class GradoList extends Component{
+class CatedraticoList extends Component{
     componentWillMount = () => {
         const {listar} = this.props;
         listar();
@@ -14,13 +14,13 @@ class GradoList extends Component{
         return(
             <div>
                 
-                <h3> Grados </h3>
+                <h3> Catedraticos </h3>
                 <div className="d-flex flex-row justify-content-end mb-3">
                     <a
                         className="btn btn-primary btn-sm"
-                        href='/#/grados/create'
+                        href='/#/catedraticos/create'
                     >
-                        Agregar grado
+                        Agregar catedratico
                     </a>
                 </div>
                 {data &&
@@ -33,16 +33,31 @@ class GradoList extends Component{
                         //onSortChange={onSortChange}
                     >
                         <TableHeaderColumn
-                            dataField="nombre"
+                            dataField="profile"
                             dataSort
+                            dataFormat={(cell,row)=>{
+                                return cell.name;
+                            }}
                         >
-                            Nombre del Grado
+                            Nombre del Catedratico
                         </TableHeaderColumn>
                         <TableHeaderColumn
-                            dataField="descripcion"
+                            dataField="profile"
                             dataSort
+                            dataFormat={(cell,row)=>{
+                                return cell.last_name;
+                            }}
                         >
-                            Descripcion
+                            Apellidos del Catedratico
+                        </TableHeaderColumn>
+                        <TableHeaderColumn
+                            dataField="profesion"
+                            dataSort
+                            dataFormat={(cell)=>{
+                                return cell.profesion_name;
+                            }}
+                        >
+                            Profesion
                         </TableHeaderColumn>
                         <TableHeaderColumn
                             isKey
@@ -51,8 +66,8 @@ class GradoList extends Component{
                             dataSort
                             dataFormat={
                                 standardActions({
-                                    editar: 'grados',
-                                    ver: 'grados/ver',
+                                    editar: 'catedraticos',
+                                    ver: 'catedraticos/ver',
                                     eliminar: eliminar
                             })}
                         >
@@ -65,4 +80,4 @@ class GradoList extends Component{
     }
 }
 
-export default GradoList;
+export default CatedraticoList;

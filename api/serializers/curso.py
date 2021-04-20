@@ -4,7 +4,11 @@ from api.models.curso import Curso
 class CursoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curso
-        fields = '__all__'
+        fields = (
+            'id',
+            'curso_name',
+            'curso_descripcion',
+        )
 
 class CursoRegisterSerializer(serializers.ModelSerializer):
     class Meta:

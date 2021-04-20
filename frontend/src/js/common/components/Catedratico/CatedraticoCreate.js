@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Formulario from './Formulario';
 
-class ProfesionCreate extends Component{
+class CatedraticoCreate extends Component{
     state={
         creacion: true,
     }
@@ -24,7 +24,7 @@ class ProfesionCreate extends Component{
 
     render(){
         console.log("props:",this.props)
-        const {crear} = this.props;
+        const {crear, obtenerProfeciones} = this.props;
         const {creacion} = this.state;
         const fun = creacion ? crear : this.actualizar;
 
@@ -32,6 +32,7 @@ class ProfesionCreate extends Component{
             <React.Fragment>
                 <h3>Nuevo Registro</h3>
                 <Formulario
+                    obtenerProfeciones = {obtenerProfeciones}
                     crear={creacion}
                     onSubmit = {fun}
                 />
@@ -40,4 +41,4 @@ class ProfesionCreate extends Component{
     }
 }
 
-export default ProfesionCreate;
+export default CatedraticoCreate;
