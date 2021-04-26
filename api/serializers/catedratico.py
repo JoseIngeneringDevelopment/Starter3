@@ -4,7 +4,7 @@ from api.models.profile import Profile
 from django.contrib.auth.models import User
 
 class CatedraticoRegisterSerializer(serializers.Serializer):
-    email = serializers.EmailField()
+    email = serializers.CharField(max_length=80)
     name = serializers.CharField(max_length=50)
     last_name = serializers.CharField(max_length=50)
     password = serializers.CharField(max_length=20)
@@ -19,4 +19,4 @@ class CatedraticoSerializer(serializers.ModelSerializer):
             'profile',   
             'profesion',       
         )
-        depth = 1
+        depth = 2

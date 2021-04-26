@@ -28,6 +28,11 @@ import NivelList from './common/components/Nivel/NivelListContainer';
 import NivelCreate from './common/components/Nivel/NivelCreateContainer';
 import CatedraticoList from './common/components/Catedratico/CatedraticoListContainer';
 import CatedraticoCreate from './common/components/Catedratico/CatedraticoCreateContainer';
+import EstudianteList from './common/components/Estudiante/EstudianteListContainer';
+import EstudianteCreate from './common/components/Estudiante/EstudianteCreateContainer';
+import AsignacionList from './common/components/Asignacion/AsignacionListContainer';
+import AsignacionCreate from './common/components/Asignacion/AsignacionCreateContainer';
+
 require('../style/index.css');
 
 module.exports = (
@@ -74,6 +79,15 @@ module.exports = (
                 <ProtectedRoute exact path="/catedraticos/create" component={CatedraticoCreate} />
                 <ProtectedRoute exact path="/catedraticos/:id/editar" component={CatedraticoCreate} />
                 <ProtectedRoute exact path="/catedraticos/ver/:id" component={CatedraticoCreate} />
+                <ProtectedRoute exact path="/estudiantes" component={EstudianteList} />
+                <ProtectedRoute exact path="/estudiantes/create" component={EstudianteCreate} />
+                <ProtectedRoute exact path="/estudiantes/:id/editar" component={EstudianteCreate} />
+                <ProtectedRoute exact path="/estudiantes/ver/:id" component={EstudianteCreate} />
+                <ProtectedRoute exact path="/asignaciones" component={AsignacionList} />
+                <ProtectedRoute exact path="/asignaciones/create" component={AsignacionCreate} />
+                <ProtectedRoute exact path="/asignaciones/:id/editar" component={AsignacionCreate} />
+                <ProtectedRoute exact path="/asignaciones/ver/:id" component={AsignacionCreate} />
+                
                 <Route component={NotFound} />
                 
             </Switch>

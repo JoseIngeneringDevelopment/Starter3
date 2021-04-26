@@ -48,7 +48,7 @@ class CatedraticoViewset(viewsets.ModelViewSet):
                         email = data.get("email"),
                         username = data.get("username")
                     )
-                    user.set_password(data.get("pasword"))
+                    user.set_password(data.get("password"))
                     user.save()
 
                     rol = Rol.objects.get(pk=2)

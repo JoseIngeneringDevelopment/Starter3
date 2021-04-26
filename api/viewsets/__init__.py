@@ -5,3 +5,6 @@ from .curso import CursoViewset
 from .nivel import NivelViewset
 from .seccion import SeccionViewset
 from .catedratico import CatedraticoViewset
+from .estudiante import EstudianteViewset
+from .asignacion import AsignacionViewset
+from .ciclo import CicloViewset
