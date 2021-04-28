@@ -32,6 +32,7 @@ import EstudianteList from './common/components/Estudiante/EstudianteListContain
 import EstudianteCreate from './common/components/Estudiante/EstudianteCreateContainer';
 import AsignacionList from './common/components/Asignacion/AsignacionListContainer';
 import AsignacionCreate from './common/components/Asignacion/AsignacionCreateContainer';
+import CursosProfesorList from './common/components/CursosProfesor/CursosProfesorListContainer';
 
 require('../style/index.css');
 
@@ -87,6 +88,8 @@ module.exports = (
                 <ProtectedRoute exact path="/asignaciones/create" component={AsignacionCreate} />
                 <ProtectedRoute exact path="/asignaciones/:id/editar" component={AsignacionCreate} />
                 <ProtectedRoute exact path="/asignaciones/ver/:id" component={AsignacionCreate} />
+                <ProtectedRoute exact path="/cursosProfesor" component={CursosProfesorList} />
+
                 
                 <Route component={NotFound} />
                 

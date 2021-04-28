@@ -105,14 +105,18 @@ class AsignacionViewset(viewsets.ModelViewSet):
     def cursosProfesor(self, request):
         try:
             cat = request.user.profile
-            #catedratico = Catedratico.objects.get(catedratico_asignacion = cat.id)
             catedratico = Catedratico.objects.get(profile_id = cat)
             print('Catedratico',catedratico)
-            #cursos_profesor = {}
             asignaciones = Asignacion.objects.filter(catedratico_id = catedratico)
             print('asignaciones',asignaciones)
+            page = self.paginate_queryset(asignaciones)
+            if page is not None:
+                serializer = AsignacionCursosCatedraticoSerializer(page, many=True)
+                return self.get_paginated_response(serializer.data)
+
             serializer = AsignacionCursosCatedraticoSerializer(asignaciones, many= True)
            
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'detail':str(e)},status=status.HTTP_400_BAD_REQUEST)
+

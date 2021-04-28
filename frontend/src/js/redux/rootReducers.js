@@ -14,6 +14,7 @@ import nivel from "./modules/nivel/nivel"
 import catedratico from "./modules/catedratico/catedratico"
 import estudiante from "./modules/estudiante/estudiante"
 import asignacion from "./modules/asignacion/asignacion"
+import cursosProfesor from "./modules/cursosProfesor/cursosProfesor"
 
 export default combineReducers({
     form: formReducer,
@@ -29,6 +30,7 @@ export default combineReducers({
     catedratico,
     estudiante,
     asignacion,
+    cursosProfesor,
     routing,
     notificaciones,
 });
