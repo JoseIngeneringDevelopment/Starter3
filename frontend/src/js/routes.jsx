@@ -94,7 +94,7 @@ module.exports = (
                 <ProtectedRoute exact path="/cursosProfesor" component={CursosProfesorList} />
                 <ProtectedRoute exact path="/asignados/ver/:id" component={AsignacionEstudianteList} />
                 <ProtectedRoute exact path="/material/ver/:id" component={MaterialList} />
-                <ProtectedRoute exact path="/material/create" component={MaterialCreate} />
+                <ProtectedRoute exact path="/material/create/:id_asignacion" component={MaterialCreate} />
                 <Route component={NotFound} />
                 
             </Switch>

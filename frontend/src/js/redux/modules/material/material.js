@@ -71,8 +71,8 @@ export const leer = (page = id) => (dispatch,getStore) => {
 export const crear = (formData, archivos) => (dispatch, getStore) =>{
     console.log("dataForm: ", formData);
     console.log("archivos",archivos)
-    const asignacion_id = formData.asignacion.value;
-    formData.asignacion = asignacion_id;
+    //const asignacion_id = formData.asignacion.value;
+    //formData.asignacion = asignacion_id;
     api.postAttachments(endpoint, formData, archivos).then(response => {
         console.log("Response: ", response);
         NotificationManager.success('Se agrego material', 'Éxito', 3000);

@@ -12,13 +12,15 @@ class Formulario extends Component{
         return(
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Asignacion</label>
+            
+
                     <Field
                         name="asignacion"
-                        component={AsyncSelectField}
-                        loadOptions={obtenerAsignacion}
-                        isClearable
+                        component={"input"}
+                        type="hidden"
+                       
                     />
+
                     <br /><br />
                     <label>Titulo</label>
                     <Field

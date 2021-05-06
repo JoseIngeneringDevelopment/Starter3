@@ -34,7 +34,7 @@ class MaterialList extends Component{
                 <div className="d-flex flex-row justify-content-end mb-3">
                     <a
                         className="btn btn-primary btn-sm"
-                        href='/#/material/create'
+                        href= {`/#/material/create/${id}`}
                     >
                         Agregar material
                     </a>

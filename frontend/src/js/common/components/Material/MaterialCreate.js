@@ -39,11 +39,13 @@ class MaterialCreate extends Component{
         const {crear, eliminar, obtenerAsignacion} = this.props;
         const {creacion} = this.state;
         const fun = creacion ? this.crate : this.actualizar;
+        const id = this.props.match.params.id_asignacion;
         console.log('archivo:',this.state.archivo)
         return(
             <React.Fragment>
                 <h3>Nuevo Registro</h3>
                 <Formulario
+                    initialValues={{asignacion: id}}
                     setArchivo = {this.setArchivo}
                     obtenerAsignacion = {obtenerAsignacion}
                     crear={creacion}
