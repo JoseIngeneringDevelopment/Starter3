@@ -8,3 +8,5 @@ from .catedratico import CatedraticoSerializer, CatedraticoRegisterSerializer
 from .estudiante import EstudianteSerializer, EstudianteRegisterSerializer
 from .asignacion import AsignacionSerializer, AsignacionRegisterSerializer, AsignacionReadSerializer, AsignacionCursosCatedraticoSerializer
 from .ciclo import CicloSerializer, CicloRegisterSerializer
+from .asignacion_estudiante import AsignacionCursosEstudianteSerializer, AsignacionEstudianteReadSerializer, AsignacionEstudianteRegisterSerializer, AsignacionEstudienteSerializer
+from .material_clase import MaterialSerializer, MaterialRegisterSerializer, MaterialReadSerializer, MaterialCursoSerializer

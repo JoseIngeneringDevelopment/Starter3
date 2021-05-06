@@ -33,6 +33,9 @@ import EstudianteCreate from './common/components/Estudiante/EstudianteCreateCon
 import AsignacionList from './common/components/Asignacion/AsignacionListContainer';
 import AsignacionCreate from './common/components/Asignacion/AsignacionCreateContainer';
 import CursosProfesorList from './common/components/CursosProfesor/CursosProfesorListContainer';
+import AsignacionEstudianteList from './common/components/AsignacionEstudiante/AsignacionEstudianteListContainer';
+import MaterialList from './common/components/Material/MaterialListContainer'
+import MaterialCreate from './common/components/Material/MateralCreateContainer'
 
 require('../style/index.css');
 
@@ -89,8 +92,9 @@ module.exports = (
                 <ProtectedRoute exact path="/asignaciones/:id/editar" component={AsignacionCreate} />
                 <ProtectedRoute exact path="/asignaciones/ver/:id" component={AsignacionCreate} />
                 <ProtectedRoute exact path="/cursosProfesor" component={CursosProfesorList} />
-
-                
+                <ProtectedRoute exact path="/asignados/ver/:id" component={AsignacionEstudianteList} />
+                <ProtectedRoute exact path="/material/ver/:id" component={MaterialList} />
+                <ProtectedRoute exact path="/material/create" component={MaterialCreate} />
                 <Route component={NotFound} />
                 
             </Switch>

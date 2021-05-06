@@ -8,3 +8,5 @@ from .catedratico import CatedraticoViewset
 from .estudiante import EstudianteViewset
 from .asignacion import AsignacionViewset
 from .ciclo import CicloViewset
+from .asignacion_estudiente import AsignacionEstudianteViewset
+from .material_clase import MaterialViewset

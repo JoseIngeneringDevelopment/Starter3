@@ -70,9 +70,9 @@ class Navbar extends Component {
                                 </Link>
                             </DropdownItem>
                             <DropdownItem>
-                                <Link tabIndex="0" to="/transaction-history">
+                                <Link tabIndex="0" to="/cursosProfesor">
                                     <i className="material-icons"></i>
-                                    Transactions
+                                    Mis cursos
                                 </Link>
                             </DropdownItem>
                             <DropdownItem divider />

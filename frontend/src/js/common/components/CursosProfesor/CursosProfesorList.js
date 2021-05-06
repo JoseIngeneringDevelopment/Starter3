@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import Grid from "../Utils/Grid";
 import PropTypes from 'prop-types';
 import cursosProfesor from "../../../redux/modules/cursosProfesor/cursosProfesor";
+import {verEstudiantes} from "../CursosProfesor/verEstudiantes";
+
+
 
 
 
 class CursosProfesorList extends Component{
     static propTypes = {
-        data: PropTypes.array.isRequired
+        data: PropTypes.object.isRequired
 
     };
     componentWillMount = () => {
@@ -49,13 +52,21 @@ class CursosProfesorList extends Component{
                             dataField="id"
                             dataAlign="center"
                             dataSort
-                            /*dataFormat= {
-                                cursosProfesor({
-                                verasignados: 'asignados',
-                            })}*/
+                            dataFormat= {
+                                verEstudiantes({
+                                    ver: 'asignados/ver',
+                                    verMaterial: 'material/ver',
+                                    verTareas: 'tareas/ver'
+                                })
+                                
+                        
+                        }
+                           
+                            
                         >
-                            Ver Asignados
+                            Acciones
                         </TableHeaderColumn>
+
                     </Grid>
                     
                 

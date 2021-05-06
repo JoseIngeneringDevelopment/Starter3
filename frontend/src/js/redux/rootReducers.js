@@ -15,6 +15,8 @@ import catedratico from "./modules/catedratico/catedratico"
 import estudiante from "./modules/estudiante/estudiante"
 import asignacion from "./modules/asignacion/asignacion"
 import cursosProfesor from "./modules/cursosProfesor/cursosProfesor"
+import asignaciones from "./modules/asignacionEstudiante/asignaciones"
+import material from "./modules/material/material"
 
 export default combineReducers({
     form: formReducer,
@@ -31,6 +33,8 @@ export default combineReducers({
     estudiante,
     asignacion,
     cursosProfesor,
+    asignaciones,
+    material,
     routing,
     notificaciones,
 });
