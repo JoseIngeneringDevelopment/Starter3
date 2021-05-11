@@ -1,0 +1,8 @@
+@action(detail=False, methods=['get'])
+def cursosProfesor(self, request, name):
+    try:
+       profesor = request.user.profile.profile_catedratico
+       cursos_profesor = profesor.catedratico_asignacion.all()
+       #serializar y paginar...
+       except Exception as e:
+            return Response({'detail':str(e)},status=status.HTTP_400_BAD_REQUEST);

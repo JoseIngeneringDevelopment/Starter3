@@ -10,3 +10,4 @@ from .asignacion import AsignacionViewset
 from .ciclo import CicloViewset
 from .asignacion_estudiente import AsignacionEstudianteViewset
 from .material_clase import MaterialViewset
+from .tarea import TareaViewset

@@ -98,3 +98,22 @@ class AsignacionEstudianteViewset(viewsets.ModelViewSet):
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'detail':str(e)},status=status.HTTP_400_BAD_REQUEST)
+    
+    @action(detail=False, methods=['get'])
+    def cursosEstudiante(self, request):
+        try:
+            est = request.user.profile
+            estudiante = Estudiante.objects.get(profile_id = est)
+            print('Catedratico',estudiante)
+            cursos = Asignacion_Estudiante.objects.filter(estudiante_id = estudiante)
+            print('asignaciones',cursos)
+            page = self.paginate_queryset(cursos)
+            if page is not None:
+                serializer = AsignacionCursosEstudianteSerializer(page, many=True)
+                return self.get_paginated_response(serializer.data)
+
+            serializer = AsignacionCursosEstudianteSerializer(cursos, many= True)
+           
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'detail':str(e)},status=status.HTTP_400_BAD_REQUEST)

@@ -1,0 +1,15 @@
+NOTAS DJANGO
+
+Crear un proyecto
+
+- cd ruta de la carpeta del proyecto
+- django-admin startproject NombredelProyecto
+
+Crear la app del proyecto
+
+- python manage.py startapp ProyectowebApp
+
+Iniciar el servidor DJango
+
+- python manage.py runserver
+

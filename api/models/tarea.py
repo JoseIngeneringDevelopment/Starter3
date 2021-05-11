@@ -10,7 +10,7 @@ class Tarea(models.Model):
     nombre = models.CharField(max_length=45, null=True, blank=True)
     descripcion = models.TextField(max_length=255, null=True, blank=True)
     archivo = models.FileField(upload_to='Tarea', null=True, blank=True)
-    fecha_entrega = models.DateTimeField(auto_now_add=True)
+    fecha_entrega = models.DateField(auto_now_add=False)
     nota = models.FloatField(null=True, blank=True)
     
     activo = models.BooleanField(default=True)

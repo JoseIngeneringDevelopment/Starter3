@@ -1,0 +1,4 @@
+<Formulario 
+ initialValues={{'id_asignacion':id_asignacion}}
+/>
+const idasignacion = this.props.match.params.idasignacion

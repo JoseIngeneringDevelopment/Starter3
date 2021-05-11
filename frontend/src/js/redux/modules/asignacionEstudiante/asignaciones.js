@@ -84,6 +84,26 @@ export const crear = (data) => (dispatch, getStore) =>{
     });
 };
 
+export const listarCursos = (page = 1) => (dispatch, getStore) => {
+
+    const resource = getStore().asignaciones;
+    const params = { page };
+    params.ordering = resource.ordering;
+    params.search = resource.search;
+    dispatch({type: SET_LOADER_ASIGNACIONES, loader: true});
+    api.get("asignaciones/cursosEstudiante", params)
+        .then((response) => {
+            dispatch({type: SET_DATA_ASIGNACIONES, data: response});
+            console.log('data cursos',data)
+            dispatch({type: SET_PAGE_ASIGNACIONES, page: page})
+        })
+        .catch(() => {})
+        .finally(() => {
+            dispatch({type: SET_LOADER_ASIGNACIONES, loader: false});
+        });
+
+};
+
 
 export const obtenerEstudiantes = (search) => (dispatch) => {
     return api.get("estudiante", {search}).then(response => {
@@ -111,6 +131,7 @@ export const actions = {
     leer,
     obtenerEstudiantes,
     crear,
+    listarCursos,
 };
 
 export const reducers = {

@@ -72,7 +72,13 @@ class Navbar extends Component {
                             <DropdownItem>
                                 <Link tabIndex="0" to="/cursosProfesor">
                                     <i className="material-icons"></i>
-                                    Mis cursos
+                                    Mis cursos Profesor
+                                </Link>
+                            </DropdownItem>
+                            <DropdownItem>
+                                <Link tabIndex="0" to="/cursosEstudiante">
+                                    <i className="material-icons"></i>
+                                    Mis cursos Estudiante
                                 </Link>
                             </DropdownItem>
                             <DropdownItem divider />

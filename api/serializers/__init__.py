@@ -10,3 +10,4 @@ from .asignacion import AsignacionSerializer, AsignacionRegisterSerializer, Asig
 from .ciclo import CicloSerializer, CicloRegisterSerializer
 from .asignacion_estudiante import AsignacionCursosEstudianteSerializer, AsignacionEstudianteReadSerializer, AsignacionEstudianteRegisterSerializer, AsignacionEstudienteSerializer
 from .material_clase import MaterialSerializer, MaterialRegisterSerializer, MaterialReadSerializer, MaterialCursoSerializer
+from .tarea import TareaSerializer, TareaRegisterSerializer, TareaReadSerializer, TareaCursoSerializer

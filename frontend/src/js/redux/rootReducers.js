@@ -17,6 +17,7 @@ import asignacion from "./modules/asignacion/asignacion"
 import cursosProfesor from "./modules/cursosProfesor/cursosProfesor"
 import asignaciones from "./modules/asignacionEstudiante/asignaciones"
 import material from "./modules/material/material"
+import tarea from "./modules/tarea/tarea"
 
 export default combineReducers({
     form: formReducer,
@@ -35,6 +36,7 @@ export default combineReducers({
     cursosProfesor,
     asignaciones,
     material,
+    tarea,
     routing,
     notificaciones,
 });
