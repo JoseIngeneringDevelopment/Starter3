@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Field, reduxForm } from "redux-form";
 import { renderField} from "../Utils/renderField/renderField"
-import { AsyncSelectField , renderFilePicker} from "../Utils/renderField/renderField";
+import { AsyncSelectField , renderFilePicker } from "../Utils/renderField/renderField";
 
 class Formulario extends Component{
     
