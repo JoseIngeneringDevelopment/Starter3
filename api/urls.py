@@ -19,6 +19,7 @@ router.register(r'ciclo',viewsets.CicloViewset)
 router.register(r'asignaciones',viewsets.AsignacionEstudianteViewset)
 router.register(r'material',viewsets.MaterialViewset)
 router.register(r'tarea',viewsets.TareaViewset)
+router.register(r'tareaEstudiante',viewsets.TareaEstudianteViewset)
 
 
 

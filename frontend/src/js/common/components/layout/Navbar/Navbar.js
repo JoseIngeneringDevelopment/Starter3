@@ -20,7 +20,7 @@ class Navbar extends Component {
     };
     render() {
         const { navToggle, logOut, user } = this.props;
-
+        const rol = user.profile && user.profile.rol ? user.profile.rol.rol_name : "ninguno";
         return (
             <nav className="align-items-stretch flex-md-nowrap p-0 navbar navbar-light">
                 <div className="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
@@ -69,18 +69,15 @@ class Navbar extends Component {
                                     Files
                                 </Link>
                             </DropdownItem>
-                            <DropdownItem>
-                                <Link tabIndex="0" to="/cursosProfesor">
-                                    <i className="material-icons"></i>
-                                    Mis cursos Profesor
-                                </Link>
-                            </DropdownItem>
+                            
+                            {rol == "student" &&
                             <DropdownItem>
                                 <Link tabIndex="0" to="/cursosEstudiante">
                                     <i className="material-icons"></i>
                                     Mis cursos Estudiante
                                 </Link>
                             </DropdownItem>
+                            }
                             <DropdownItem divider />
                             <DropdownItem>
                                 <a

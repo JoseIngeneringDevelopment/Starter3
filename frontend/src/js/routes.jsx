@@ -39,6 +39,9 @@ import MaterialCreate from './common/components/Material/MateralCreateContainer'
 import TareaList from './common/components/Tarea/TareaListContainer'
 import TareaCreate from './common/components/Tarea/TareaCreateContainer'
 import CursosEstudianteList from './common/components/CursosEstudiante/CursosEstudianteListContainer'
+import TareaVerEstudianteList from './common/components/TareaVerEstudiante/TareaVerEstudianteLisContainer'
+import TareaEstudianteCreate from './common/components/TareaEstudiante/TareaEstudianteCreateContainer'
+import TareaEstudianteList from './common/components/TareaEstudiante/TareaEstudianteListContainer'
 
 require('../style/index.css');
 
@@ -101,7 +104,9 @@ module.exports = (
                 <ProtectedRoute exact path="/tareas/ver/:id" component={TareaList} />
                 <ProtectedRoute exact path="/tareas/create/:id_asignacion" component={TareaCreate} />
                 <ProtectedRoute exact path="/cursosEstudiante" component={CursosEstudianteList} />
-
+                <ProtectedRoute exact path="/tareasverestudiante/ver/:id" component={TareaVerEstudianteList} />
+                <ProtectedRoute exact path="/tareasestudiante/create/:id_tarea" component={TareaEstudianteCreate} />
+                <ProtectedRoute exact path="/tareasestudiante/ver/:id" component={TareaEstudianteList} />
                 <Route component={NotFound} />
                 
             </Switch>

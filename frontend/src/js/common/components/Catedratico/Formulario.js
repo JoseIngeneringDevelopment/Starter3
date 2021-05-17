@@ -40,12 +40,15 @@ class Formulario extends Component{
                         type="text"
                     />
                     <br /><br />
+
                     <label>Contraseña</label>
+                    {ver == false &&
                     <Field
                         name="password"
                         component={renderField}
                         type="password"
                     />
+                    }
                     <br /><br />
                     <label>Profeciones</label>
                     <Field

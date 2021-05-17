@@ -6,6 +6,7 @@ import { AsyncSelectField } from "../Utils/renderField/renderField";
 import { Field, reduxForm } from "redux-form";
 import FormularioEstudiantes from './FormularioEstudiantes';
 import {standardActions} from "../Utils/Grid/StandardActions";
+import {verTareasEstudiante} from "./vertTareasEstudiante"
 
 
 
@@ -65,7 +66,7 @@ class AsignacionEstudianteList extends Component{
                                 dataField="estudiante"
                                 dataSort
                                 dataFormat={(cell,row)=>{
-                                    console.log("row: ", row)
+                                    console.log("row: ", cell)
                                     return `${cell.profile.name} ${cell.profile.last_name}`;
                                     
                                 }}
@@ -85,6 +86,18 @@ class AsignacionEstudianteList extends Component{
                                 })}
                             >
                                 Acciones
+                            </TableHeaderColumn>
+                            <TableHeaderColumn
+
+                                dataField="estudiante"
+                                dataAlign="center"
+                                dataSort
+                                dataFormat={
+                                    verTareasEstudiante({
+                                        verTareas: 'tareasEstudiante/ver',
+                                })}
+                            >
+                                Tareas
                             </TableHeaderColumn>
                         </Grid>
                     

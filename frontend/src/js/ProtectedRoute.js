@@ -57,6 +57,7 @@ class PrivateRouteBase extends Component {
                                     toggleOpen={this.state.toggleOpen}
                                     navToggle={this.navToggle}
                                     logOut={logOut}
+                                    user={me}
                                 />
                                 <main className="main-content p-0 col-sm-12 col-md-9 offset-md-3 col-lg-10 offset-lg-2">
                                     <div className="main-navbar bg-white sticky-top">

@@ -56,10 +56,11 @@ class CursosEstudianteList extends Component{
                             dataField="id"
                             dataAlign="center"
                             dataSort
+
                             dataFormat= {
                                 verCursos({
                                     verMaterial: 'material/ver',
-                                    verTareas: 'tareas/ver'
+                                    verTareas: 'tareasverestudiante/ver'
                                 })
                                 
                         

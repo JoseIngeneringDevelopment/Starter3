@@ -15,18 +15,8 @@ class Acciones extends Component {
         return (
             <div className="d-flex justify-content-center">
                     
-                    {verMaterial !== undefined && (
-                    <Link to={`${verMaterial}/${id}/`} className="px-2">
-                        <a
-                        className="btn btn-primary btn-sm"
-                        href='/#/asignaciones/create'
-                        >
-                        Ver Material
-                        </a>
-                    </Link>
-                    )}
                     {verTareas !== undefined && (
-                    <Link to={`${verTareas}/${id}/`} className="px-2">
+                    <Link to={`/${verTareas}/${id}/`} className="px-2">
                         <a
                         className="btn btn-primary btn-sm"
                         href='/#/asignaciones/create'
@@ -35,6 +25,7 @@ class Acciones extends Component {
                         </a>
                     </Link>
                     )}
+                    
                 
             </div>
         );
@@ -42,9 +33,8 @@ class Acciones extends Component {
 }
 Acciones.propTypes = {};
 
-export function verCursos(acciones) {
+export function verTareasEstudiante(acciones) {
     return (cell, row) => {
-        console.log('tareaEstudiante',cell)
-        return <Acciones id={row.asignacion.id} {...acciones} />;
+        return <Acciones id={row.id} {...acciones} />;
     };
 }

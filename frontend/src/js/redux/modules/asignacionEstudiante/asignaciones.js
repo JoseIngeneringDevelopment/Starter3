@@ -104,6 +104,29 @@ export const listarCursos = (page = 1) => (dispatch, getStore) => {
 
 };
 
+export const eliminar = (page = id) => (dispatch) => {
+    dispatch({type: SET_LOADER_ASIGNACIONES, loader: true});
+    api.eliminar(`${endpoint}/${page}`)
+        .then(() => {
+            dispatch(listar());
+            NotificationManager.success(
+                'Registro eliminado',
+                'Éxito',
+                3000
+            );
+        })
+        .catch(() => {
+            NotificationManager.error(
+                'Error en la transacción',
+                'Éxito',
+                3000
+            );
+        })
+        .finally(() => {
+            dispatch({type: SET_LOADER_ASIGNACIONES, loader: false});
+        });
+};
+
 
 export const obtenerEstudiantes = (search) => (dispatch) => {
     return api.get("estudiante", {search}).then(response => {
@@ -132,6 +155,7 @@ export const actions = {
     obtenerEstudiantes,
     crear,
     listarCursos,
+    eliminar
 };
 
 export const reducers = {

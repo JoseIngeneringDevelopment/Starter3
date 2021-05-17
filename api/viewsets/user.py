@@ -10,7 +10,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
 
-from api.models import Profile
+from api.models import Profile, Rol
 from api.serializers import UserSerializer, UserReadSerializer
 
 
@@ -78,11 +78,13 @@ class UserViewset(viewsets.ModelViewSet):
             perfil, created = Profile.objects.get_or_create(user=user)
             if avatar is not None:
                 perfil.avatar = File(avatar)
+
             profile = data.get("profile")
             if profile is not None:
                 perfil.phone = profile.get("phone", perfil.phone)
                 perfil.address = profile.get("address", perfil.address)
                 #perfil.gender = profile.get("gender", perfil.gender)
+
             user.save()
             perfil.save()
             serializer = UserReadSerializer(user)

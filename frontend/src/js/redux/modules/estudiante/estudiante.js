@@ -45,11 +45,34 @@ export const crear = (data) => (dispatch, getStore) =>{
     });
 };
 
+export const eliminar = (page = id) => (dispatch) => {
+    dispatch({type: SET_LOADER_ESTUDIANTE, loader: true});
+    api.eliminar(`${endpoint}/${page}`)
+        .then(() => {
+            dispatch(listar());
+            NotificationManager.success(
+                'Registro eliminado',
+                'Éxito',
+                3000
+            );
+        })
+        .catch(() => {
+            NotificationManager.success(
+                'Error en la transacción',
+                'Éxito',
+                3000
+            );
+        })
+        .finally(() => {
+            dispatch({type: SET_LOADER_ESTUDIANTE, loader: false});
+        });
+};
 
 
 export const actions = {
     listar,
-    crear
+    crear,
+    eliminar,
 };
 
 export const reducers = {

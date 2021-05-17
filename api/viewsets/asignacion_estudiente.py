@@ -86,7 +86,7 @@ class AsignacionEstudianteViewset(viewsets.ModelViewSet):
         try:
             asignacion = request.query_params.get("id")
             print('asignacion',request.query_params.get("id"))
-            estudiantes = Asignacion_Estudiante.objects.filter(asignacion_id = asignacion)
+            estudiantes = Asignacion_Estudiante.objects.filter(asignacion_id = asignacion,activo=True)
             print('estudiantes',estudiantes)
             page = self.paginate_queryset(estudiantes)
             if page is not None:
@@ -105,7 +105,7 @@ class AsignacionEstudianteViewset(viewsets.ModelViewSet):
             est = request.user.profile
             estudiante = Estudiante.objects.get(profile_id = est)
             print('Catedratico',estudiante)
-            cursos = Asignacion_Estudiante.objects.filter(estudiante_id = estudiante)
+            cursos = Asignacion_Estudiante.objects.filter(estudiante_id = estudiante, activo=True)
             print('asignaciones',cursos)
             page = self.paginate_queryset(cursos)
             if page is not None:

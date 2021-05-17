@@ -45,6 +45,62 @@ export const crear = (data) => (dispatch, getStore) =>{
     });
 };
 
+export const leer = (page = id) => (dispatch,getStore) => {
+    const resource = getStore().catedratico;
+    const params = { page };
+    params.ordering = resource.ordering;
+    params.search = resource.search;
+    dispatch({type: SET_LOADER_CATEDRATICO, loader: true});
+    console.log("resorce", resource);
+    api.get(`${endpoint}/${page}`)
+        .then((response) => {
+            
+
+            const profesiones = [];
+   
+
+            profesiones.push({
+                value: response.profesion.id, 
+                label: response.profesion.profesion_name,
+            });
+
+            response.profesion = profesiones;
+            console.log("response: ", response)
+            dispatch({type: SET_DATA_CATEDRATICO, response: response});
+            dispatch({type: SET_PAGE_CATEDRATICO, page: page})
+            if (!!formName) dispatch(initializeForm(formName, response));
+        })
+        .catch((error) => {
+            console.log("error: ", error)
+            NotificationManager.error('Error en la creación', 'ERROR');
+        }).finally(() => {
+            dispatch({type: SET_LOADER_CATEDRATICO, loader: false});
+        });
+};
+
+export const eliminar = (page = id) => (dispatch) => {
+    dispatch({type: SET_LOADER_CATEDRATICO, loader: true});
+    api.eliminar(`${endpoint}/${page}`)
+        .then(() => {
+            dispatch(listar());
+            NotificationManager.success(
+                'Registro eliminado',
+                'Éxito',
+                3000
+            );
+        })
+        .catch(() => {
+            NotificationManager.success(
+                'Error en la transacción',
+                'Éxito',
+                3000
+            );
+        })
+        .finally(() => {
+            dispatch({type: SET_LOADER_CATEDRATICO, loader: false});
+        });
+};
+
 export const obtenerProfeciones = (search) => (dispatch) => {
     return api.get("profesion", {search}).then(response => {
         if(response){
@@ -66,7 +122,9 @@ export const obtenerProfeciones = (search) => (dispatch) => {
 export const actions = {
     listar,
     crear,
+    leer,
     obtenerProfeciones,
+    eliminar,
 };
 
 export const reducers = {

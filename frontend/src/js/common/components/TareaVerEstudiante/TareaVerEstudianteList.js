@@ -3,49 +3,45 @@ import { Link } from 'react-router-dom';
 import Grid from "../Utils/Grid";
 import PropTypes from 'prop-types';
 import {standardActions} from "../Utils/Grid/StandardActions";
+import {enviarTarea} from "../TareaVerEstudiante/enviarTarea"
 
 
 
 
 
 
-class MaterialList extends Component{
+class TarealVerEstudianteList extends Component{
     static propTypes = {
         data: PropTypes.object.isRequired
 
     };
     componentWillMount = () => {
         const {listar} = this.props;
+
         const id = this.props.match.params.id;
         console.log('id',id)
         console.log('props', this.props)
-
         listar(1,id);
+   
 
     }
     render(){
-        const { data, loader,}= this.props;
-
+        const { data, loader}= this.props;
         const id = this.props.match.params.id;
         console.log("data",data)
-
-        console.log('props materia', this.props)
-
         return(
             <div>
                 
-                <h3> Material </h3>
- 
+                <h3> Tareas </h3>
+
                 <div className="d-flex flex-row justify-content-end mb-3">
                     <a
                         className="btn btn-primary btn-sm"
-                        href= {`/#/material/create/${id}`}
+                        href= {`/#/tareas/create/${id}`}
                     >
-                        Agregar material
+                        Agregar tarea
                     </a>
                 </div>
-                
-
                 <div className="d-flex flex-row justify-content-end mb-3">
                     <a
                         className="btn btn-secondary btn-sm"
@@ -64,11 +60,11 @@ class MaterialList extends Component{
                         //onSortChange={onSortChange}
                     >
                         <TableHeaderColumn
-                            dataField="titulo"
+                            dataField="nombre"
                             dataSort
 
                         >
-                            Titulo
+                            Nombre
                         </TableHeaderColumn>
                         <TableHeaderColumn
                             dataField="descripcion"
@@ -77,16 +73,26 @@ class MaterialList extends Component{
                             Descripcion
                         </TableHeaderColumn>
                         <TableHeaderColumn
+                            dataField="fecha_entrega"
+                            dataSort
+                        >
+                            Fecha de entrega
+                        </TableHeaderColumn>
+                        <TableHeaderColumn
+                            dataField="nota"
+                            dataSort
+                        >
+                            Nota
+                        </TableHeaderColumn>
+                        <TableHeaderColumn
                             isKey
                             dataField="id"
                             dataAlign="center"
                             dataSort
                             dataFormat={
-                                standardActions({
-                                    editar: 'material',
-                                    ver: '/material/create',
-
-                            })
+                                enviarTarea({
+                                    enviarTarea: ''
+                                })
                                 
                         
                         }
@@ -104,4 +110,4 @@ class MaterialList extends Component{
     }
 }
 
-export default MaterialList;
+export default TarealVerEstudianteList;

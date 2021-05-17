@@ -4,7 +4,7 @@ import MaterialCreate from './MaterialCreate';
 
 const ms2p = (state) => {
     return {
-        ...state.asignacion,
+        ...state.material,
     };
 };
 

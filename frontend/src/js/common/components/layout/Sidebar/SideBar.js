@@ -7,7 +7,10 @@ class SideBar extends Component {
     }
 
     render() {
-        const { toggleOpen, navToggle, logOut } = this.props;
+        const { toggleOpen, navToggle, logOut, user } = this.props;
+        console.log('user',user)
+        const rol = user.profile && user.profile.rol ? user.profile.rol.rol_name : "ninguno";
+        console.log('rol',rol)
         return (
             <aside
                 className={`main-sidebar px-0 col-12 col-md-3 col-lg-2 ${
@@ -48,8 +51,8 @@ class SideBar extends Component {
                                 </div>
                                 <span>Home</span>
                             </NavLink>
-                        </li>
-                        <li className="nav-item">
+                         </li>
+                        {/*<li className="nav-item">
                             <NavLink
                                 to="/page2"
                                 className="nav-link"
@@ -104,7 +107,8 @@ class SideBar extends Component {
                                 </div>
                                 <span>Tabs</span>
                             </NavLink>
-                        </li>
+                        </li> */}
+                        {rol == "administrador" &&
                         <li className="nav-item">
                             <NavLink
                                 to="/profesions"
@@ -119,6 +123,8 @@ class SideBar extends Component {
                                 <span>Profesiones</span>
                             </NavLink>
                         </li>
+                        }
+                        {rol == "administrador" &&
                         <li className="nav-item">
                             <NavLink
                                 to="/grados"
@@ -133,6 +139,8 @@ class SideBar extends Component {
                                 <span>Grados</span>
                             </NavLink>
                         </li>
+                        }
+                        {rol == "administrador" &&
                         <li className="nav-item">
                             <NavLink
                                 to="/secciones"
@@ -147,6 +155,8 @@ class SideBar extends Component {
                                 <span>Secciones</span>
                             </NavLink>
                         </li>
+                        }
+                        {rol == "administrador" &&
                         <li className="nav-item">
                             <NavLink
                                 to="/cursos"
@@ -161,6 +171,8 @@ class SideBar extends Component {
                                 <span>Cursos</span>
                             </NavLink>
                         </li>
+                        }
+                        {rol == "administrador" &&
                         <li className="nav-item">
                             <NavLink
                                 to="/niveles"
@@ -175,6 +187,8 @@ class SideBar extends Component {
                                 <span>Niveles</span>
                             </NavLink>
                         </li>
+                        }
+                        {rol == "administrador" &&
                         <li className="nav-item">
                             <NavLink
                                 to="/catedraticos"
@@ -189,6 +203,8 @@ class SideBar extends Component {
                                 <span>Catedraticos</span>
                             </NavLink>
                         </li>
+                        }
+                        {rol == "administrador" &&
                         <li className="nav-item">
                             <NavLink
                                 to="/estudiantes"
@@ -203,6 +219,8 @@ class SideBar extends Component {
                                 <span>Estudiantes</span>
                             </NavLink>
                         </li>
+                        }
+                        {rol == "administrador" &&
                         <li className="nav-item">
                             <NavLink
                                 to="/asignaciones"
@@ -217,9 +235,11 @@ class SideBar extends Component {
                                 <span>Asignaciones</span>
                             </NavLink>
                         </li>
+                        }
+                        {rol == "profesor" &&
                         <li className="nav-item">
                             <NavLink
-                                to="/tareas"
+                                to="/cursosProfesor"
                                 className="nav-link"
                                 activeClassName={'active'}
                             >
@@ -228,9 +248,26 @@ class SideBar extends Component {
                                         vertical_split
                                     </i>
                                 </div>
-                                <span>Tareas</span>
+                                <span>Mis Cursos</span>
                             </NavLink>
                         </li>
+                        }
+                        {rol == "student" &&
+                        <li className="nav-item">
+                            <NavLink
+                                to="/cursosEstudiante"
+                                className="nav-link"
+                                activeClassName={'active'}
+                            >
+                                <div className="d-inline-block item-icon-wrapper">
+                                    <i className="material-icons">
+                                        vertical_split
+                                    </i>
+                                </div>
+                                <span>Mis Cursos</span>
+                            </NavLink>
+                        </li>
+                        }
                         <li className="nav-item">
                             <Link
                                 to="/login"

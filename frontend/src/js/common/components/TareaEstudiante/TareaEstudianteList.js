@@ -9,7 +9,7 @@ import {standardActions} from "../Utils/Grid/StandardActions";
 
 
 
-class MaterialList extends Component{
+class TareaEstudiantelList extends Component{
     static propTypes = {
         data: PropTypes.object.isRequired
 
@@ -19,37 +19,30 @@ class MaterialList extends Component{
         const id = this.props.match.params.id;
         console.log('id',id)
         console.log('props', this.props)
-
         listar(1,id);
 
     }
     render(){
-        const { data, loader,}= this.props;
-
+        const { data, loader}= this.props;
         const id = this.props.match.params.id;
         console.log("data",data)
-
-        console.log('props materia', this.props)
-
         return(
             <div>
                 
-                <h3> Material </h3>
- 
-                <div className="d-flex flex-row justify-content-end mb-3">
-                    <a
-                        className="btn btn-primary btn-sm"
-                        href= {`/#/material/create/${id}`}
-                    >
-                        Agregar material
-                    </a>
-                </div>
-                
+                <h3> Tareas </h3>
 
                 <div className="d-flex flex-row justify-content-end mb-3">
                     <a
+                        className="btn btn-primary btn-sm"
+                        href= {`/#/tareasEstudiante/create/${id}`}
+                    >
+                        Agregar tarea
+                    </a>
+                </div>
+                <div className="d-flex flex-row justify-content-end mb-3">
+                    <a
                         className="btn btn-secondary btn-sm"
-                        href='/#/cursosProfesor'
+                        href='/#/cursosEstudiante'
                     >
                         Regresar a Mis Cursos
                     </a>
@@ -64,17 +57,38 @@ class MaterialList extends Component{
                         //onSortChange={onSortChange}
                     >
                         <TableHeaderColumn
-                            dataField="titulo"
+                            dataField="tarea"
                             dataSort
+                            dataFormat={(cell,row)=>{
+                                console.log("row: ", row)
+                                return cell.nombre;
+                            }}
 
                         >
-                            Titulo
+                            Tarea
                         </TableHeaderColumn>
                         <TableHeaderColumn
-                            dataField="descripcion"
+                            dataField="estudiante"
+                            dataSort
+                            dataFormat={(cell,row)=>{
+                                console.log("row: ", cell)
+                                return `${cell.profile.name} ${cell.profile.last_name}`;
+                                
+                            }}
+                        >
+                            Estudiante
+                        </TableHeaderColumn>
+                        <TableHeaderColumn
+                            dataField="fecha_entrega"
                             dataSort
                         >
-                            Descripcion
+                            Fecha de entrega
+                        </TableHeaderColumn>
+                        <TableHeaderColumn
+                            dataField="puntuacion"
+                            dataSort
+                        >
+                            Nota
                         </TableHeaderColumn>
                         <TableHeaderColumn
                             isKey
@@ -83,8 +97,8 @@ class MaterialList extends Component{
                             dataSort
                             dataFormat={
                                 standardActions({
-                                    editar: 'material',
-                                    ver: '/material/create',
+                                    editar: 'tareaEstudiante',
+                                    ver: 'tareaEstudiante/ver',
 
                             })
                                 
@@ -104,4 +118,4 @@ class MaterialList extends Component{
     }
 }
 
-export default MaterialList;
+export default TareaEstudiantelList;
