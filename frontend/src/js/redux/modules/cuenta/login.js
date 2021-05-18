@@ -37,7 +37,12 @@ export const onSubmit = (data = {}) => (dispatch, getStore) => {
             localStorage.setItem('token', response.token);
             dispatch(initializeForm('profile', response.user));
             dispatch(setMe(response.user));
-            dispatch(push('/'));
+            if (response.user.profile.rol.rol_name =="administrador")
+                dispatch(push('/reporteAdmin'));
+            else if(response.user.profile.rol.rol_name == "profesor")
+                dispatch(push('/reporteProfesor'));
+            else if(response.user.profile.rol.rol_name == "student")
+                dispatch(push('/reporteEstudiante'));
         })
         .catch(() => {
             NotificationManager.error(

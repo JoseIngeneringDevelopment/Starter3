@@ -97,8 +97,8 @@ class TareaEstudiantelList extends Component{
                             dataSort
                             dataFormat={
                                 standardActions({
-                                    editar: 'tareaEstudiante',
-                                    ver: 'tareaEstudiante/ver',
+                                    editar: '/tareasEstudiante',
+                                    ver: 'tareasEstudiante/ver',
 
                             })
                                 

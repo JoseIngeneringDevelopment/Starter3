@@ -46,5 +46,7 @@ class AsignacionCursosCatedraticoSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'curso',  
+            'grado',
+            'seccion',
         )
         depth = 2

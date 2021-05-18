@@ -39,9 +39,10 @@ class SideBar extends Component {
                 </div>
                 <div className="nav-wrapper">
                     <ul className="nav--no-borders flex-column nav">
+                        {rol == "administrador" &&
                         <li className="nav-item">
                             <NavLink
-                                to="/"
+                                to="/reporteAdmin"
                                 exact
                                 className="nav-link "
                                 activeClassName={'active'}
@@ -52,6 +53,37 @@ class SideBar extends Component {
                                 <span>Home</span>
                             </NavLink>
                          </li>
+                        }
+                        {rol == "profesor" &&
+                        <li className="nav-item">
+                            <NavLink
+                                to="/reporteProfesor"
+                                exact
+                                className="nav-link "
+                                activeClassName={'active'}
+                            >
+                                <div className="d-inline-block item-icon-wrapper">
+                                    <i className="material-icons">edit</i>
+                                </div>
+                                <span>Home</span>
+                            </NavLink>
+                         </li>
+                         }
+                         {rol == "student" &&
+                        <li className="nav-item">
+                            <NavLink
+                                to="/reporteEstudiante"
+                                exact
+                                className="nav-link "
+                                activeClassName={'active'}
+                            >
+                                <div className="d-inline-block item-icon-wrapper">
+                                    <i className="material-icons">edit</i>
+                                </div>
+                                <span>Home</span>
+                            </NavLink>
+                         </li>
+                         }
                         {/*<li className="nav-item">
                             <NavLink
                                 to="/page2"

@@ -20,8 +20,9 @@ router.register(r'asignaciones',viewsets.AsignacionEstudianteViewset)
 router.register(r'material',viewsets.MaterialViewset)
 router.register(r'tarea',viewsets.TareaViewset)
 router.register(r'tareaEstudiante',viewsets.TareaEstudianteViewset)
-
-
+router.register(r'reporteAdmin', viewsets.ReporteAdminView)
+router.register(r'reporteProfesor', viewsets.ReporteProfesorView)
+router.register(r'reporteEstudiante', viewsets.ReporteEstudianteView)
 
 urlpatterns = [
     path('api/', include(router.urls)),

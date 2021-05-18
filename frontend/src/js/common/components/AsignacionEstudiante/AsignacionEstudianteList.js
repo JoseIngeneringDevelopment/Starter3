@@ -30,6 +30,8 @@ class AsignacionEstudianteList extends Component{
     render(){
         const { data, loader, obtenerEstudiantes, eliminar, crear}= this.props;
         const id = this.props.match.params.id;
+        const id_estudiante = this.props.data.results
+        console.log("id_estudiante1",id_estudiante)
         console.log("estudiantes",data)
         return(
             <div>

@@ -42,6 +42,9 @@ import CursosEstudianteList from './common/components/CursosEstudiante/CursosEst
 import TareaVerEstudianteList from './common/components/TareaVerEstudiante/TareaVerEstudianteLisContainer'
 import TareaEstudianteCreate from './common/components/TareaEstudiante/TareaEstudianteCreateContainer'
 import TareaEstudianteList from './common/components/TareaEstudiante/TareaEstudianteListContainer'
+import ReporteAdmin from './common/components/ReporteAdmin/ReporteAdminContainer'
+import ReporteProfesor from './common/components/ReporteProfesor/ReporteProfesorContainer'
+import ReporteEstudiante from './common/components/ReporteEstudiante/ReporteEstudianteContainer'
 
 require('../style/index.css');
 
@@ -106,7 +109,11 @@ module.exports = (
                 <ProtectedRoute exact path="/cursosEstudiante" component={CursosEstudianteList} />
                 <ProtectedRoute exact path="/tareasverestudiante/ver/:id" component={TareaVerEstudianteList} />
                 <ProtectedRoute exact path="/tareasestudiante/create/:id_tarea" component={TareaEstudianteCreate} />
+                <ProtectedRoute exact path="/tareasestudiante/:id/editar" component={TareaEstudianteCreate} />
                 <ProtectedRoute exact path="/tareasestudiante/ver/:id" component={TareaEstudianteList} />
+                <ProtectedRoute exact path="/reporteAdmin" component={ReporteAdmin} />
+                <ProtectedRoute exact path="/reporteProfesor" component={ReporteProfesor} />
+                <ProtectedRoute exact path="/reporteEstudiante" component={ReporteEstudiante} />
                 <Route component={NotFound} />
                 
             </Switch>

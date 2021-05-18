@@ -38,7 +38,7 @@ export const listar = (page = 1,id) => (dispatch, getStore) => {
 };
 
 export const leer = (page = id) => (dispatch,getStore) => {
-    const resource = getStore().tarea;
+    const resource = getStore().tareaEstudiante;
     const params = { page };
     params.ordering = resource.ordering;
     params.search = resource.search;
@@ -48,15 +48,15 @@ export const leer = (page = id) => (dispatch,getStore) => {
         .then((response) => {
             
 
-            const asignaciones = []; 
-            asignacion.push({
-                value: response.asignaciones.id, 
-                label: response.curso.curso_name,
+            const estudiantes = []; 
+            estudiantes.push({
+                value: response.estudiante.id, 
+                label: `${response.estudiante.carnet} ${response.estudiante.profile.name} ${response.estudiante.profile.last_name}`,
             });
             
-            response.asignaciones = asignaciones;
-            console.log("response: ", response)
+            response.estudiante = estudiantes;
             dispatch({type: SET_DATA_TAREA_ESTUDIANTE, response: response});
+            console.log("response 23: ", response)
             dispatch({type: SET_PAGE_TAREA_ESTUDIANTE, page: page})
             if (!!formName) dispatch(initializeForm(formName, response));
         })

@@ -35,6 +35,7 @@ Acciones.propTypes = {};
 
 export function verTareasEstudiante(acciones) {
     return (cell, row) => {
-        return <Acciones id={row.id} {...acciones} />;
+        console.log('Tareas row 1', cell)
+        return <Acciones id={row.estudiante.id} {...acciones} />;
     };
 }
